@@ -1,0 +1,29 @@
+# Python
+__pycache__/
+*.py[cod]
+*.env
+.env
+venv/
+*.sqlite3
+*.pyc
+*.pyo
+*.pyd
+*.log
+*.db
+*.sqlite
+.pytest_cache/
+htmlcov/
+
+# Node
+node_modules/
+dist/
+build/
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+.DS_Store
+/vite-env.d.ts
+
+# VS Code
+.vscode/
