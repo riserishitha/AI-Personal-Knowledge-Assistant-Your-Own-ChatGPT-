@@ -20,48 +20,62 @@ export default function RegisterPage() {
   }
 
   return (
-    <main className="min-h-screen bg-slate-950 px-6 py-12 text-white">
-      <div className="mx-auto max-w-md rounded-3xl border border-slate-700 bg-slate-900/90 p-8 shadow-xl shadow-slate-950/40">
-        <h1 className="text-3xl font-semibold">Create your account</h1>
-        <form className="mt-8 space-y-6" onSubmit={handleRegister}>
-          <label className="block">
-            <span className="text-sm text-slate-300">Name</span>
-            <input
-              type="text"
-              value={name}
-              onChange={(e) => setName(e.target.value)}
-              className="mt-2 w-full rounded-2xl border border-slate-700 bg-slate-950 px-4 py-3 text-white focus:border-cyan-500 focus:outline-none"
-              required
-            />
-          </label>
-          <label className="block">
-            <span className="text-sm text-slate-300">Email</span>
-            <input
-              type="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              className="mt-2 w-full rounded-2xl border border-slate-700 bg-slate-950 px-4 py-3 text-white focus:border-cyan-500 focus:outline-none"
-              required
-            />
-          </label>
-          <label className="block">
-            <span className="text-sm text-slate-300">Password</span>
-            <input
-              type="password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              className="mt-2 w-full rounded-2xl border border-slate-700 bg-slate-950 px-4 py-3 text-white focus:border-cyan-500 focus:outline-none"
-              required
-            />
-          </label>
-          {error && <p className="text-sm text-rose-400">{error}</p>}
-          <button className="w-full rounded-2xl bg-cyan-500 px-4 py-3 font-semibold text-slate-950 transition hover:bg-cyan-400">
-            Register
-          </button>
-        </form>
-        <p className="mt-4 text-sm text-slate-400">
-          Already registered? <Link to="/login" className="text-cyan-400">Login</Link>
-        </p>
+    <main className="min-h-screen bg-gradient-to-br from-slate-950 via-slate-900 to-slate-800 px-6 py-12 text-white">
+      <div className="mx-auto max-w-3xl space-y-8">
+        <div className="rounded-[2rem] border border-slate-700 bg-slate-900/90 p-10 shadow-[0_30px_90px_-40px_rgba(15,23,42,0.9)]">
+          <div className="mb-8 flex items-center justify-between gap-4 rounded-3xl bg-slate-950/80 p-5">
+            <div>
+              <p className="text-sm uppercase tracking-[0.3em] text-cyan-300">Create your workspace</p>
+              <h1 className="mt-3 text-3xl font-semibold">Register an account</h1>
+            </div>
+            <span className="rounded-full bg-cyan-500/10 px-4 py-2 text-sm text-cyan-300">Private AI</span>
+          </div>
+
+          <form className="space-y-6" onSubmit={handleRegister}>
+            <label className="block">
+              <span className="text-sm text-slate-300">Name</span>
+              <input
+                type="text"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+                className="mt-2 w-full rounded-3xl border border-slate-700 bg-slate-950 px-4 py-3 text-white outline-none transition focus:border-cyan-500"
+                required
+              />
+            </label>
+            <label className="block">
+              <span className="text-sm text-slate-300">Email</span>
+              <input
+                type="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                className="mt-2 w-full rounded-3xl border border-slate-700 bg-slate-950 px-4 py-3 text-white outline-none transition focus:border-cyan-500"
+                required
+              />
+            </label>
+            <label className="block">
+              <span className="text-sm text-slate-300">Password</span>
+              <input
+                type="password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                className="mt-2 w-full rounded-3xl border border-slate-700 bg-slate-950 px-4 py-3 text-white outline-none transition focus:border-cyan-500"
+                required
+              />
+            </label>
+            {error && <p className="text-sm text-rose-400">{error}</p>}
+            <button className="w-full rounded-3xl bg-cyan-500 px-5 py-3 text-sm font-semibold text-slate-950 transition hover:bg-cyan-400">
+              Register
+            </button>
+          </form>
+        </div>
+
+        <div className="rounded-[2rem] border border-slate-700 bg-slate-900/90 p-8 text-center text-slate-300 shadow-[0_20px_60px_-40px_rgba(15,23,42,0.85)]">
+          <p className="text-sm uppercase tracking-[0.25em] text-slate-500">Already have an account?</p>
+          <p className="mt-3 text-lg">Login now and start uploading your documents for AI assistance.</p>
+          <Link to="/login" className="mt-6 inline-flex rounded-full bg-slate-800 px-6 py-3 text-sm font-semibold text-white transition hover:bg-slate-700">
+            Sign in
+          </Link>
+        </div>
       </div>
     </main>
   )
